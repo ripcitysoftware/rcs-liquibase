@@ -13,7 +13,6 @@ services:
   my-postgres:
     container_name: my-postgres
     volumes:
-      # https://stackoverflow.com/questions/26598738/how-to-create-user-database-in-script-for-docker-postgres
       - ./database:/docker-entrypoint-initdb.d/
     image: postgres:latest
     ports:
