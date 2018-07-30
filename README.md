@@ -55,3 +55,7 @@ The `rcs/rcs-liquibase` container will look for a Liquibase change log file star
   
 ### JDBC specific properties
 * jdbc_url="${jdbc_url:-jdbc:postgresql://$postgres_host:$postgres_port/$postgres_db}"
+
+## Tests
+
+See the `test` directory for an exmaple `docker-compose` file and Liquibase `dbchangelog.xml` file.
