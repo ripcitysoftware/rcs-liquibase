@@ -1,6 +1,6 @@
 # RCS Liquibase 
 
-This container is built off of the (https://github.com/kilna/liquibase-postgres-docker)[kilna/liquibase-postgres] 
+This container is built off of the [https://github.com/kilna/liquibase-postgres-docker](kilna/liquibase-postgres) 
 container. `rcs-liquibase` is designed to wait for your DB host to be up and running before
 running liquibase. By default, the liquibase `update` command will be run. See the Variables
 section below for which variables can be set.
