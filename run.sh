@@ -37,9 +37,16 @@ function check_postgres() {
 function create_liquibase_properties() {
   echo "building liquibase properties file"
 
+  # first look for the db.changelog-master.xml default style
+  [[ -z "$liquibase_changelog_file" ]] && \
+    liquibase_changelog_file=$(find /source_root -name 'db.chang*' | head -n 1)
+
+  # if we didn't find a match, try another pattern
   [[ -z "$liquibase_changelog_file" ]] && \
     liquibase_changelog_file=$(find /source_root -name 'dbchang*' | head -n 1)
 
+  echo "using changelog file: $liquibase_changelog_file"
+  
   cat <<EOF > /workspace/liquibase.properties
     classpath: /opt/jdbc/postgres-jdbc.jar
     driver: org.postgresql.Driver
