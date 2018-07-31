@@ -10,7 +10,7 @@ postgres_password="${postgres_password:-password}"
 # liquibase specific settings
 liquibase_command="${liquibase_command:-update}"
 liquibase_context="${liquibase_context:-!dev}"
-liquibase_changelog_file="${liquibase_changelog_file}"
+liquibase_changelog_file=
 
 # jdbc specific settings
 jdbc_url="${jdbc_url:-jdbc:postgresql://$postgres_host:$postgres_port/$postgres_db}"
@@ -46,7 +46,7 @@ function create_liquibase_properties() {
     liquibase_changelog_file=$(find /source_root -name 'dbchang*' | head -n 1)
 
   echo "using changelog file: $liquibase_changelog_file"
-  
+
   cat <<EOF > /workspace/liquibase.properties
     classpath: /opt/jdbc/postgres-jdbc.jar
     driver: org.postgresql.Driver

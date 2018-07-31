@@ -50,7 +50,6 @@ The `rcs/rcs-liquibase` container will look for a Liquibase change log file star
 ### Liquibase specific properties
 * liquibase_command="${liquibase_command:-update}"
 * liquibase_context="${liquibase_context:-!dev}"
-* liquibase_changelog_file="${liquibase_changelog_file}"
   
 ### JDBC specific properties
 * jdbc_url="${jdbc_url:-jdbc:postgresql://$postgres_host:$postgres_port/$postgres_db}"
